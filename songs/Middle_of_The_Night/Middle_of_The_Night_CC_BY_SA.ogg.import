@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Middle_of_The_Night_CC_BY_SA.ogg-e662392c2a6d2a395bd065afd0a5c488.oggstr"
+
+[deps]
+
+source_file="res://songs/Middle_of_The_Night/Middle_of_The_Night_CC_BY_SA.ogg"
+dest_files=[ "res://.import/Middle_of_The_Night_CC_BY_SA.ogg-e662392c2a6d2a395bd065afd0a5c488.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

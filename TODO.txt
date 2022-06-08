@@ -1,0 +1,11 @@
+ref links:
+https://www.youtube.com/watch?v=fN6ROKipOkY
+https://www.youtube.com/watch?v=N7fknWET1TE
+
+https://www.youtube.com/watch?v=z643GMyn3KY iOS
+
+Tutoral plan:
+part 1 - show godot, mboy site, launch / show ref images
+part 2 - mapping in editor / show json in format ?? load map in game -> test in inspector  ??
+
+part 3 - start with note (->types), then bar (-> white devider in taiko), than track

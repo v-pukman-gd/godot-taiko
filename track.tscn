@@ -1,0 +1,11 @@
+[gd_scene format=2]
+
+[node name="Track" type="Node2D"]
+
+[node name="Bg" type="Panel" parent="."]
+margin_right = 1000.0
+margin_bottom = 52.0
+rect_scale = Vector2( 0.96, 3.08 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
