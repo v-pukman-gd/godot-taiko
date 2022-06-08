@@ -23,7 +23,6 @@ animations = [ {
 
 [node name="Note" type="Node2D"]
 script = ExtResource( 1 )
-type = 0
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( -45, -45 )
