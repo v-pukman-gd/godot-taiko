@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://note.gd" type="Script" id=1]
 [ext_resource path="res://note_sprites.png" type="Texture" id=2]
@@ -21,6 +21,9 @@ animations = [ {
 "speed": 1.0
 } ]
 
+[sub_resource type="CircleShape2D" id=4]
+radius = 35.1806
+
 [node name="Note" type="Node2D"]
 script = ExtResource( 1 )
 
@@ -37,3 +40,11 @@ region_rect = Rect2( 0, 0, 120, 120 )
 visible = false
 frames = SubResource( 3 )
 speed_scale = 2.0
+
+[node name="Area2D" type="Area2D" parent="." groups=[
+"note",
+]]
+position = Vector2( 0, 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource( 4 )

@@ -106,3 +106,15 @@ func remove_bar(bar):
 	print("delete bar")
 	bar.queue_free()
 	bars.erase(bar)
+
+func _on_Picker_area_entered(area):
+	if area.is_in_group("note"):
+		area.get_parent().is_colliding = true
+		#area.get_parent().queue_free()
+		#print(area.get_parent())
+
+func _on_Picker_area_exited(area):
+	if area.is_in_group("note"):
+		area.get_parent().is_colliding = false
+		#area.get_parent().queue_free()
+		#print(area.get_parent())
