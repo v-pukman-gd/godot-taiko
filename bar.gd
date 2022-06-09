@@ -2,56 +2,52 @@ extends Node2D
 
 var note_scn = preload("res://note.tscn")
 
-var bar_data = {
-			"index": 2,
-			"quarters_count": 4,
-			"notes": [
-				{
-					"pos": 0,
-					"len": 100,
-					"markers": ["d"]
-				},
-				{
-					"pos": 100,
-					"len": 100,
-					"markers": ["d"]
-				},
-				{
-					"pos": 200,
-					"len": 100,
-					"markers": ["d"]
-				},
-				{
-					"pos": 300,
-					"len": 100,
-					"markers": ["d"]
-				},
-				{
-					"pos": 400,
-					"len": 100,
-					"markers": ["DD"]
-				},
-				{
-					"pos": 800,
-					"len": 100,
-					"markers": []
-				},
-				{
-					"pos": 1200,
-					"len": 100,
-					"markers": ["KK"]
-				}
-			]
-		}
+var notes_data = [
+	{
+		"pos": 0,
+		"len": 100,
+		"markers": ["d"]
+	},
+	{
+		"pos": 100,
+		"len": 100,
+		"markers": ["d"]
+	},
+	{
+		"pos": 200,
+		"len": 100,
+		"markers": ["d"]
+	},
+	{
+		"pos": 300,
+		"len": 100,
+		"markers": ["d"]
+	},
+	{
+		"pos": 400,
+		"len": 100,
+		"markers": ["DD"]
+	},
+	{
+		"pos": 800,
+		"len": 100,
+		"markers": []
+	},
+	{
+		"pos": 1200,
+		"len": 100,
+		"markers": ["KK"]
+	}
+]
 
 var note_scale = 0.5
-var speed
+var length = 1600
 
 func _ready():
 	add_notes()
 
 func add_notes():
-	for note_data in bar_data.notes:
+	for note_data in notes_data:
 		add_note(note_data)
 		
 func add_note(note_data):
