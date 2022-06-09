@@ -11,10 +11,16 @@ var quarter_time_in_sec
 var speed
 var note_scale
 var start_pos_in_sec
-var start_pos_in_px
-var pre_start_duration_in_m
+#var start_pos_in_px
+var pre_start_length
 
 var data_ready = false
+
+var track_scn = preload("res://track.tscn")
+var track
+
+var music_scn = preload("res://music.tscn")
+var music
 
 func _ready():
 	audio = load(audio_path)
@@ -35,8 +41,23 @@ func setup():
 	speed = bar_length_in_m/float(4*quarter_time_in_sec) # each bar has 4 quarters # 
 	note_scale = bar_length_in_m/float(4*400)
 	start_pos_in_sec = (float(map.start_pos)/400.0) * quarter_time_in_sec
-	start_pos_in_px = start_pos_in_sec * speed
-	pre_start_duration_in_m = bar_length_in_m
+	#start_pos_in_px = start_pos_in_sec * speed
+	pre_start_length = bar_length_in_m
+
+	track = track_scn.instance()
+	track.curr_bar_x = pre_start_length
+	track.bars_data = map.tracks[0].bars
+	track.speed = Vector2(speed, 0)
+	track.note_scale = note_scale
+	track.position = Vector2(332, 192)
+	add_child(track)
+	
+	music = music_scn.instance()
+	music.audio = audio
+	music.speed = speed
+	music.pre_start_length = pre_start_length
+	music.start_pos_in_sec = start_pos_in_sec
+	add_child(music)
 	
 	data_ready = true
 
@@ -44,4 +65,3 @@ func _process(delta):
 	if not data_ready:
 		return
 		
-	print(audio, map.tracks)

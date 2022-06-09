@@ -23,5 +23,9 @@ __meta__ = {
 position = Vector2( 79, 61 )
 scale = Vector2( 1.6, 1.6 )
 texture = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Bars" type="Node2D" parent="."]
+position = Vector2( 79, 0 )
