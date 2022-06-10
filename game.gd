@@ -59,6 +59,12 @@ func setup():
 	music.start_pos_in_sec = start_pos_in_sec
 	add_child(music)
 	
+	$Drums.connect("red_left", track, "on_red_left_pressed")
+	$Drums.connect("red_right", track, "on_red_right_pressed")
+	
+	$Drums.connect("blue_left", track, "on_blue_left_pressed")
+	$Drums.connect("blue_right", track, "on_blue_right_pressed")
+	
 	data_ready = true
 
 func _process(delta):

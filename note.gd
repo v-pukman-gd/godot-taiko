@@ -25,32 +25,36 @@ func set_sprite():
 			$Sprite.scale = Vector2(BIG_SCALE,BIG_SCALE)
 			$Sprite.position = Vector2(-71, -71)
 
-func _process(delta):
-	if is_colliding and not collected:
-		if is_trigger_pressed():
-			collected = true
-			hide()
-			Input.action_release("red_left")
-			Input.action_release("red_right")
-			Input.action_release("blue_left")
-			Input.action_release("blue_right")
+#func _process(delta):
+#	if is_colliding and not collected:
+#		if is_trigger_pressed():
+#			collected = true
+#			hide()
+#			Input.action_release("red_left")
+#			Input.action_release("red_right")
+#			Input.action_release("blue_left")
+#			Input.action_release("blue_right")
+			
+func collect():
+	collected = true
+	hide()
 		
 
-func is_trigger_pressed():
-	
-	if type == "red":
-		if size == "normal":
-			return Input.is_action_just_pressed("red_left") or Input.is_action_just_pressed("red_right")
-		elif size == "big":
-			return Input.is_action_just_pressed("red_left") and Input.is_action_just_pressed("red_right")
-		else:
-			return false
-	elif type == "blue":
-		if size == "normal":
-			return Input.is_action_just_pressed("blue_left") or Input.is_action_just_pressed("blue_right")
-		elif size == "big":
-			return Input.is_action_just_pressed("blue_left") and Input.is_action_just_pressed("blue_right")
-		else:
-			return false
-	else:
-		return false
+#func is_trigger_pressed():
+#
+#	if type == "red":
+#		if size == "normal":
+#			return Input.is_action_just_pressed("red_left") or Input.is_action_just_pressed("red_right")
+#		elif size == "big":
+#			return Input.is_action_just_pressed("red_left") and Input.is_action_just_pressed("red_right")
+#		else:
+#			return false
+#	elif type == "blue":
+#		if size == "normal":
+#			return Input.is_action_just_pressed("blue_left") or Input.is_action_just_pressed("blue_right")
+#		elif size == "big":
+#			return Input.is_action_just_pressed("blue_left") and Input.is_action_just_pressed("blue_right")
+#		else:
+#			return false
+#	else:
+#		return false

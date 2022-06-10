@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/drum_blue.ogg-601f5d28fdfb4aff518e13111366ca52.oggstr"
+
+[deps]
+
+source_file="res://sounds/drum_blue.ogg"
+dest_files=[ "res://.import/drum_blue.ogg-601f5d28fdfb4aff518e13111366ca52.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

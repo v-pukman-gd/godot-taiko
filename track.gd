@@ -72,6 +72,8 @@ var curr_bar_index = 0
 var note_scale = 0.5
 var speed = Vector2(800, 0)
 
+var colliding_notes = []
+
 func _ready():
 	for i in range(0, 4):
 		add_bar()
@@ -110,11 +112,40 @@ func remove_bar(bar):
 func _on_Picker_area_entered(area):
 	if area.is_in_group("note"):
 		area.get_parent().is_colliding = true
+		colliding_notes.push_back(area.get_parent())
 		#area.get_parent().queue_free()
 		#print(area.get_parent())
 
 func _on_Picker_area_exited(area):
 	if area.is_in_group("note"):
 		area.get_parent().is_colliding = false
+		
+		for n in colliding_notes:
+			if n == area.get_parent():				
+				colliding_notes.erase(n)
+				
 		#area.get_parent().queue_free()
 		#print(area.get_parent())
+		
+func on_red_left_pressed():
+	print("RL")
+	collect_by_type("red")
+	
+func on_red_right_pressed():
+	print("RR")
+	collect_by_type("red")
+
+func on_blue_left_pressed():
+	print("BL")
+	collect_by_type("blue")
+		
+func on_blue_right_pressed():
+	print("BR")
+	collect_by_type("blue")
+	
+
+func collect_by_type(type):
+	var note = colliding_notes.pop_front()
+	if note:
+		if note.type == type:
+			note.collect()
