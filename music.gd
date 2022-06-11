@@ -23,7 +23,7 @@ func start():
 func _process(delta):
 	#if not game.game_started: return
 	if not started:
-		print(pre_start_length)
+		#print(pre_start_length)
 		pre_start_length -= speed*delta
 		if pre_start_length <= 0:
 			start()

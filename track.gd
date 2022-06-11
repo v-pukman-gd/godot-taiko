@@ -1,5 +1,8 @@
 extends Node2D
 
+#signal bar_index_updated
+var map_bar_index = -1 
+
 var bar_scn = preload("res://bar.tscn")
 
 onready var bars_node = $Bars
@@ -85,6 +88,7 @@ func add_bar():
 	if not bar_data: return
 		
 	var bar = bar_scn.instance()
+	bar.index = bar_data.index
 	bar.position = Vector2(curr_bar_x, 80)
 	bar.note_scale = note_scale
 	bar.notes_data = bar_data.notes
@@ -103,6 +107,14 @@ func _process(delta):
 		if bar.global_position.x + bar.length < self.global_position.x:
 			remove_bar(bar)
 			add_bar()
+			
+		if bar.global_position.x <= self.global_position.x:
+			if map_bar_index < bar.index:
+				map_bar_index = bar.index
+				#emit_signal("bar_index_updated", map_bar_index)
+				print("bar_index_updated:", map_bar_index)
+				Global.emit_signal("bar_index_updated", map_bar_index)
+			
 
 func remove_bar(bar):
 	print("delete bar")

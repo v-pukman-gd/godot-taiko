@@ -40,6 +40,7 @@ var notes_data = [
 	}
 ]
 
+var index = 0
 var note_scale = 0.5
 var length = 1600
 
@@ -66,3 +67,4 @@ func add_note(note_data):
 	note.position = Vector2(float(note_data.pos)*note_scale, -20)
 	
 	$Notes.add_child(note)
+
