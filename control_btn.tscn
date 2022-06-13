@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://theme.tres" type="Theme" id=1]
 [ext_resource path="res://refresh32.png" type="Texture" id=2]
 [ext_resource path="res://control_btn.gd" type="Script" id=3]
+[ext_resource path="res://pause32.png" type="Texture" id=4]
 
 [sub_resource type="ImageTexture" id=1]
 
@@ -18,6 +19,16 @@ margin_top = 0.338821
 margin_right = 154.751
 margin_bottom = 38.3388
 icon = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="PauseButton" type="Button" parent="."]
+margin_left = 160.739
+margin_top = -0.36367
+margin_right = 172.739
+margin_bottom = 27.6363
+icon = ExtResource( 4 )
 
 [node name="BarIndex" type="SpinBox" parent="."]
 margin_left = -0.363663
@@ -27,6 +38,9 @@ margin_bottom = 38.7273
 custom_icons/updown = SubResource( 1 )
 max_value = 10000.0
 align = 1
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Panel" type="Panel" parent="."]
 margin_left = 5.96046e-08
@@ -34,6 +48,9 @@ margin_top = 41.8213
 margin_right = 40.0
 margin_bottom = 81.8213
 rect_scale = Vector2( 2.73875, 0.937391 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="CurrBarIndex" type="RichTextLabel" parent="."]
 margin_left = 2.54564
@@ -42,6 +59,10 @@ margin_right = 102.546
 margin_bottom = 90.9129
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "let's go!"
+__meta__ = {
+"_edit_lock_": true
+}
 
 [connection signal="pressed" from="ReloadButton" to="." method="_on_ReloadButton_pressed"]
+[connection signal="pressed" from="PauseButton" to="." method="_on_PauseButton_pressed"]
 [connection signal="value_changed" from="BarIndex" to="." method="_on_BarIndex_value_changed"]
