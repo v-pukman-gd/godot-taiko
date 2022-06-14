@@ -12,3 +12,6 @@ position = Vector2( 640, 360 )
 texture = ExtResource( 5 )
 
 [node name="Drums" parent="." instance=ExtResource( 1 )]
+
+[node name="TrackPos" type="Position2D" parent="."]
+position = Vector2( 332, 192 )

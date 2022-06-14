@@ -30,8 +30,11 @@ __meta__ = {
 "_edit_lock_": true
 }
 
+[node name="BarsPosition" type="Position2D" parent="."]
+position = Vector2( 78, 0 )
+
 [node name="Bars" type="Node2D" parent="."]
-position = Vector2( 79, 0 )
+position = Vector2( 78, 0 )
 
 [node name="Picker" type="Area2D" parent="." groups=["area_good", "picker"]]
 position = Vector2( 76.9247, 67.7747 )

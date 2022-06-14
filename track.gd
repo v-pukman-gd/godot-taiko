@@ -1,7 +1,6 @@
 extends Node2D
 
-#signal bar_index_updated
-var map_bar_index = -1 
+var map_bar_index = -1  # track exact bar index 
 
 var bar_scn = preload("res://bar.tscn")
 
@@ -69,18 +68,33 @@ var bars_data = [
 		}
 	]
 
-var curr_bar_x = 0
-var curr_bar_index = 0
 
 var note_scale = 0.5
-var speed = Vector2(800, 0)
+var speed = 800
+#var pre_start_length = 0
+
+var curr_bar_x = 0
+var curr_bar_index = 0
 
 var colliding_notes = []
 
 func _ready():
+	# skip bars, but update curr_bar_x	
+	if curr_bar_index > 0 and curr_bar_index < bars_data.size():
+		for i in range(0, curr_bar_index):
+			var bar_length = bars_data[i].quarters_count * 400 * note_scale
+			curr_bar_x += bar_length
+	
+	#if pre_start_length > 0:
+	#	for i in range(0, pre_start_length):	
+	#		bars_data.push_front({"index": -1, "quarters_count": 4, "notes": []})
+		  
+		
+	#  add bars
 	for i in range(0, 4):
 		add_bar()
 		
+	
 func add_bar():
 	print("add bar")
 	if curr_bar_index >= bars_data.size(): return
@@ -100,8 +114,19 @@ func add_bar():
 	curr_bar_x += bar.length
 	curr_bar_index += 1
 	
-func _process(delta):
-	bars_node.translate(-speed*delta)
+func process_with_time(time, delta):
+	
+	bars_node.position.x -= speed*delta
+	
+	var position_x = -time * speed + $BarsPosition.position.x
+	
+	#print("x: ", position_x)
+	#print("curr x:", bars_node.position.x)
+		
+	if (abs(position_x - bars_node.position.x)) >= 200:
+		print("FIX delay! ", position_x - bars_node.position.x)
+		bars_node.position.x = position_x	
+	
 	
 	for bar in bars:		
 		if bar.global_position.x + bar.length < self.global_position.x:
