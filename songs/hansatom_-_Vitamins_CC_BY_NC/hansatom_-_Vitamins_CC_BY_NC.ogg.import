@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/hansatom_-_Vitamins_CC_BY_NC.ogg-0e557c8f7da052149d6f64a6fa207ad8.oggstr"
+
+[deps]
+
+source_file="res://songs/hansatom_-_Vitamins_CC_BY_NC/hansatom_-_Vitamins_CC_BY_NC.ogg"
+dest_files=[ "res://.import/hansatom_-_Vitamins_CC_BY_NC.ogg-0e557c8f7da052149d6f64a6fa207ad8.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
