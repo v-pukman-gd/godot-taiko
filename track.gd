@@ -80,10 +80,24 @@ var colliding_notes = []
 
 func _ready():
 	# skip bars, but update curr_bar_x	
-	if curr_bar_index > 0 and curr_bar_index < bars_data.size():
-		for i in range(0, curr_bar_index):
-			var bar_length = bars_data[i].quarters_count * 400 * note_scale
-			curr_bar_x += bar_length
+#	if curr_bar_index > 0:
+#		for i in range(0, curr_bar_index):
+#			#var bar_length = bars_data[i].quarters_count * 400 * note_scale
+#			#bars_node.position.x -= bar_length
+#
+#			var bar = bar_scn.instance()
+#			bar.index = -1
+#			bar.position = Vector2(curr_bar_x, 80)
+#			bar.note_scale = note_scale
+#			bar.notes_data = []
+#			bar.length = 4 * 400 * note_scale
+#
+#			bars.append(bar)
+#			bars_node.add_child(bar)
+#
+#			curr_bar_x += bar.length
+#			bars_node.position.x -= bar.length
+	
 	
 	#if pre_start_length > 0:
 	#	for i in range(0, pre_start_length):	
@@ -93,6 +107,8 @@ func _ready():
 	#  add bars
 	for i in range(0, 4):
 		add_bar()
+		
+	#bars_node.position.x -= 4 * 400 * note_scale * curr_bar_index
 		
 	
 func add_bar():
@@ -115,6 +131,7 @@ func add_bar():
 	curr_bar_index += 1
 	
 func process_with_time(time, delta):
+	print("map_bar_index:", map_bar_index)
 	
 	bars_node.position.x -= speed*delta
 	

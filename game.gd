@@ -45,21 +45,26 @@ func setup():
 	note_scale = bar_length_in_m/float(4*400)
 	start_pos_in_sec = (float(map.start_pos)/400.0) * quarter_time_in_sec
 	start_pos_in_px = start_pos_in_sec * speed
-	pre_start_length = 0 #bar_length_in_m # bars count #bar_length_in_m
+	#pre_start_length = bar_length_in_m # bars count #bar_length_in_m
 	
 	music = music_scn.instance()
 	music.audio = audio
 	music.speed = speed
-	music.tempo = tempo
-	music.pre_start_length = 0 #pre_start_length
+	music.tempo = tempo 
+	# should include start_pos_in_px (related to start_pos_in_sec)
+	music.pre_start_length = 1600 + start_pos_in_px 
+	# include start_pos_in_sec here
 	music.start_pos_in_sec = start_pos_in_sec + start_bar_index*4*quarter_time_in_sec # we confirm that all bars have fixed length - 4 quarters
 	add_child(music)
 	
-	track = track_scn.instance()
-	#track.pre_start_length = pre_start_length
-	track.curr_bar_x = start_pos_in_px
-	track.curr_bar_index = start_bar_index
-	track.bars_data = map.tracks[0].bars
+	var bars = map.tracks[0].bars
+	bars = bars.slice(start_bar_index, bars.size()-1)
+	bars.push_front({"index": -1, "quarters_count": 4, "notes": []})
+	
+	
+	track = track_scn.instance()	
+	track.curr_bar_x = start_pos_in_px	
+	track.bars_data = bars
 	track.speed = speed
 	track.note_scale = note_scale
 	track.position = $TrackPos.position
@@ -77,8 +82,9 @@ func _process(delta):
 	if not data_ready:
 		return
 		
-	if music.started:
-		track.process_with_time(music.time, delta)
+	#if music.started:
+	print("time: ", music.time)
+	track.process_with_time(music.time, delta)
 
 #func _on_ReloadButton_pressed():
 #	get_tree().change_scene("res://game.tscn")
