@@ -50,7 +50,7 @@ func _process(delta):
 		time -= start_pos_in_sec
 		
 		#time += start_pos_in_sec
-		#print("Time is: ", time)
+		#print("M Time is: ", time)
 		
-		beat = int(time * tempo / 60.0)
+		#beat = int(time * tempo / 60.0)
 		#print("beat is: ", beat)

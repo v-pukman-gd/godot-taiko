@@ -2,8 +2,13 @@ extends Node2D
 
 var audio
 var map
-var audio_path = "res://songs/hansatom_-_Vitamins_CC_BY_NC/hansatom_-_Vitamins_CC_BY_NC.ogg" #= "res://songs/Middle_of_The_Night/Middle_of_The_Night_CC_BY_SA.ogg"
-var map_path = "res://songs/hansatom_-_Vitamins_CC_BY_NC/hansatom_-_Vitamins_CC_BY_NC.mboy" #= "res://songs/Middle_of_The_Night/Middle_of_The_Night_CC_BY_SA.mboy"
+var audio_path = "res://songs/hansatom_-_Vitamins_CC_BY_NC/hansatom_-_Vitamins_CC_BY_NC.ogg" 
+var map_path = "res://songs/hansatom_-_Vitamins_CC_BY_NC/hansatom_-_Vitamins_CC_BY_NC.mboy" 
+
+
+#var audio_path = "res://songs/Middle_of_The_Night/Middle_of_The_Night_CC_BY_SA.ogg"
+#var map_path = "res://songs/Middle_of_The_Night/Middle_of_The_Night_CC_BY_SA.mboy"
+
 
 var tempo
 var bar_length_in_m
@@ -82,8 +87,6 @@ func _process(delta):
 	if not data_ready:
 		return
 		
-	#if music.started:
-	print("time: ", music.time)
 	track.process_with_time(music.time, delta)
 
 #func _on_ReloadButton_pressed():

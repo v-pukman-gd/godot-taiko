@@ -112,7 +112,7 @@ func _ready():
 		
 	
 func add_bar():
-	print("add bar")
+	#print("add bar")
 	if curr_bar_index >= bars_data.size(): return
 	var bar_data = bars_data[curr_bar_index]
 	if not bar_data: return
@@ -131,7 +131,8 @@ func add_bar():
 	curr_bar_index += 1
 	
 func process_with_time(time, delta):
-	print("map_bar_index:", map_bar_index)
+	#print("map_bar_index:", map_bar_index)
+	#print("tpos: ", $BarsPosition.position.x)
 	
 	bars_node.position.x -= speed*delta
 	
@@ -154,12 +155,12 @@ func process_with_time(time, delta):
 			if map_bar_index < bar.index:
 				map_bar_index = bar.index
 				#emit_signal("bar_index_updated", map_bar_index)
-				print("bar_index_updated:", map_bar_index)
+				#print("bar_index_updated:", map_bar_index)
 				Global.emit_signal("bar_index_updated", map_bar_index)
 			
 
 func remove_bar(bar):
-	print("delete bar")
+	#print("delete bar")
 	bar.queue_free()
 	bars.erase(bar)
 

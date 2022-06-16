@@ -13,6 +13,5 @@ margin_right = 40.0
 margin_bottom = 40.0
 
 [node name="Control" parent="." instance=ExtResource( 3 )]
-start_bar_index = 4
 
 [connection signal="reload" from="Control" to="." method="_on_Control_reload"]
