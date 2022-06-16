@@ -54,7 +54,7 @@ position = Vector2( 8.50122, 1.79882 )
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 637.101, 564.557 )
+position = Vector2( 637.101, 572 )
 texture = ExtResource( 1 )
 
 [node name="PointA" type="Position2D" parent="."]
@@ -75,21 +75,29 @@ position = Vector2( 397.77, 609.678 )
 stream = ExtResource( 4 )
 volume_db = 3.0
 pitch_scale = 2.0
+attenuation = 2.35
+bus = "Drums"
 
 [node name="AudioRedR" type="AudioStreamPlayer2D" parent="."]
 position = Vector2( 884.299, 617.28 )
 stream = ExtResource( 4 )
 volume_db = 3.0
 pitch_scale = 2.0
+attenuation = 2.35
+bus = "Drums"
 
 [node name="AudioBlue" type="AudioStreamPlayer2D" parent="."]
 position = Vector2( 353.493, 419.165 )
 stream = ExtResource( 5 )
 volume_db = 4.0
 pitch_scale = 2.0
+attenuation = 2.35
+bus = "Drums"
 
 [node name="AudioBlueR" type="AudioStreamPlayer2D" parent="."]
 position = Vector2( 1006, 419.165 )
 stream = ExtResource( 5 )
 volume_db = 4.0
 pitch_scale = 2.0
+attenuation = 2.35
+bus = "Drums"

@@ -14,6 +14,8 @@ func _ready():
 func _unhandled_input(event):
 	if event is InputEventScreenTouch:
 		if event.pressed:
+			#$AudioRed.play()
+			#return
 			var radius = $PointA.position.y - $PointB.position.y
 			
 			var x = event.position.x - $PointA.position.x
