@@ -176,7 +176,8 @@ func _on_Picker_area_exited(area):
 		area.get_parent().is_colliding = false
 		
 		for n in colliding_notes:
-			if n == area.get_parent():				
+			if n == area.get_parent():
+				n.fail()				
 				colliding_notes.erase(n)
 				
 		#area.get_parent().queue_free()
@@ -200,7 +201,19 @@ func on_blue_right_pressed():
 	
 
 func collect_by_type(type):
-	var note = colliding_notes.pop_front()
-	if note:
-		if note.type == type:
-			note.collect()
+	#var note = colliding_notes.pop_front()
+	#if note:
+	#	if note.type == type:
+	#		note.collect()
+		
+	for n in colliding_notes:
+		var d = n.global_position.x - $Picker.global_position.x
+		if d <= 90 and d > -45:
+			if n.type == type:
+				n.collect()
+				colliding_notes.erase(n)
+				break
+		elif d < -45 or n.type != type:
+			n.fail()
+			colliding_notes.erase(n)
+			

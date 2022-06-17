@@ -39,11 +39,10 @@ region_rect = Rect2( 0, 0, 120, 120 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 visible = false
 frames = SubResource( 3 )
-speed_scale = 2.0
+speed_scale = 10.0
 
-[node name="Area2D" type="Area2D" parent="." groups=[
-"note",
-]]
+[node name="Area2D" type="Area2D" parent="." groups=["note"]]
+visible = false
 position = Vector2( 0, 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]

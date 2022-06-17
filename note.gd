@@ -8,6 +8,9 @@ const BIG_SCALE = 1.25
 
 var collected = false
 var is_colliding = false
+var failed = false
+
+#var fail_mat = preload("res://fail_shader_mat.tres")
 
 func _ready():
 	set_sprite()
@@ -27,19 +30,19 @@ func set_sprite():
 
 #func _process(delta):
 #	if is_colliding and not collected:
-#		if is_trigger_pressed():
-#			collected = true
-#			hide()
-#			Input.action_release("red_left")
-#			Input.action_release("red_right")
-#			Input.action_release("blue_left")
-#			Input.action_release("blue_right")
+#		self.scale += Vector2(1, 1)*delta
 			
 func collect():
+	if failed: return
+	
 	collected = true
 	hide()
 		
-
+func fail():
+	if collected: return
+	
+	failed = true
+	#$Sprite.material = fail_mat
 #func is_trigger_pressed():
 #
 #	if type == "red":

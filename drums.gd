@@ -41,6 +41,20 @@ func _unhandled_input(event):
 					else:
 						$AudioBlueR.play()
 						emit_signal("blue_right")
+	elif event is InputEventKey:
+		if event.pressed:
+			if event.scancode == KEY_A:
+				$AudioRed.play()
+				emit_signal("red_left")
+			elif event.scancode == KEY_S:
+				$AudioRedR.play()
+				emit_signal("red_right")
+			elif event.scancode == KEY_K:
+				$AudioBlue.play()
+				emit_signal("blue_left")
+			elif event.scancode == KEY_L:
+				$AudioBlueR.play()
+				emit_signal("blue_right")
 
 
 #func play_red():
