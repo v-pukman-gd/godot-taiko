@@ -1,11 +1,18 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://trigger.png" type="Texture" id=1]
-[ext_resource path="res://score_bg.png" type="Texture" id=2]
+[ext_resource path="res://taikoshadow.png" type="Texture" id=1]
 [ext_resource path="res://track.gd" type="Script" id=4]
 
-[sub_resource type="StyleBoxFlat" id=1]
-bg_color = Color( 0.172549, 0.172549, 0.172549, 1 )
+[sub_resource type="Gradient" id=3]
+offsets = PoolRealArray( 0, 0.791667, 1 )
+colors = PoolColorArray( 0.321569, 0.172549, 0.168627, 1, 0.529412, 0.27451, 0.368627, 1, 0.235294, 0.2, 0.211765, 1 )
+
+[sub_resource type="GradientTexture" id=4]
+gradient = SubResource( 3 )
+
+[sub_resource type="StyleBoxTexture" id=5]
+texture = SubResource( 4 )
+region_rect = Rect2( 0, 0, 2048, 1 )
 
 [sub_resource type="CircleShape2D" id=2]
 radius = 75.966
@@ -17,7 +24,7 @@ script = ExtResource( 4 )
 margin_right = 40.0
 margin_bottom = 40.0
 rect_scale = Vector2( 23.76, 4 )
-custom_styles/panel = SubResource( 1 )
+custom_styles/panel = SubResource( 5 )
 __meta__ = {
 "_edit_lock_": true,
 "_edit_use_anchors_": false
@@ -25,7 +32,7 @@ __meta__ = {
 
 [node name="TriggerSprite" type="Sprite" parent="."]
 position = Vector2( 79, 61 )
-scale = Vector2( 1.6, 1.6 )
+scale = Vector2( 0.8, 0.8 )
 texture = ExtResource( 1 )
 __meta__ = {
 "_edit_lock_": true
@@ -43,10 +50,6 @@ position = Vector2( 97.4686, 63.2448 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Picker"]
 position = Vector2( -18.6631, -0.814026 )
 shape = SubResource( 2 )
-
-[node name="Sprite" type="Sprite" parent="."]
-position = Vector2( -168.908, 77.215 )
-texture = ExtResource( 2 )
 
 [connection signal="area_entered" from="Picker" to="." method="_on_Picker_area_entered"]
 [connection signal="area_exited" from="Picker" to="." method="_on_Picker_area_exited"]

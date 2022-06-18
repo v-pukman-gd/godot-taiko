@@ -72,8 +72,8 @@ func setup():
 	track.bars_data = bars
 	track.speed = speed
 	track.note_scale = note_scale
-	track.position = $TrackPos.position
-	add_child(track)
+	#track.position = $TrackPos.position
+	$TrackC.add_child(track)
 	
 	$Drums.connect("red_left", track, "on_red_left_pressed")
 	$Drums.connect("red_right", track, "on_red_right_pressed")

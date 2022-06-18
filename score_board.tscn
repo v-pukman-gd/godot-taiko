@@ -1,0 +1,194 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://score_bg.png" type="Texture" id=1]
+[ext_resource path="res://score_bg_txt.png" type="Texture" id=2]
+[ext_resource path="res://drum_txt.png" type="Texture" id=3]
+[ext_resource path="res://drum_effects_txt.png" type="Texture" id=4]
+[ext_resource path="res://score.tscn" type="PackedScene" id=5]
+[ext_resource path="res://fonts/TnT.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://diff_levels.png" type="Texture" id=7]
+[ext_resource path="res://fonts/Kozuka.otf" type="DynamicFontData" id=8]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0, 0, 0, 0.403922 )
+border_color = Color( 0.666667, 0, 0, 1 )
+border_blend = true
+corner_radius_top_left = 50
+corner_radius_bottom_left = 50
+corner_detail = 10
+
+[sub_resource type="DynamicFont" id=2]
+size = 30
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 20
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+extra_spacing_char = 2
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 13
+outline_size = 2
+use_filter = true
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 12
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+use_filter = true
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=8]
+size = 22
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+use_filter = true
+extra_spacing_char = 2
+font_data = ExtResource( 8 )
+
+[node name="ScoreBoard" type="Node2D"]
+
+[node name="Bg" type="Sprite" parent="."]
+position = Vector2( 157.998, 80.5391 )
+scale = Vector2( 0.47, 0.47 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( -119.496, -49.6063, 718.739, 341.74 )
+
+[node name="TextureRectBg" type="TextureRect" parent="."]
+visible = false
+margin_left = 49.0
+margin_top = 8.0
+margin_right = 772.0
+margin_bottom = 312.0
+rect_scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 2 )
+expand = true
+stretch_mode = 2
+
+[node name="Drum" type="Sprite" parent="."]
+position = Vector2( 268.033, 81.0245 )
+scale = Vector2( 0.335, 0.335 )
+texture = ExtResource( 3 )
+
+[node name="RedL" type="Sprite" parent="."]
+visible = false
+modulate = Color( 1, 1, 1, 0.196078 )
+position = Vector2( 251.977, 72.4775 )
+scale = Vector2( 0.65, 0.65 )
+texture = ExtResource( 4 )
+region_enabled = true
+region_rect = Rect2( 12, 44, 86, 121 )
+
+[node name="RedR" type="Sprite" parent="."]
+visible = false
+modulate = Color( 1, 1, 1, 0.196078 )
+position = Vector2( 290.307, 71.6096 )
+scale = Vector2( 0.65, 0.65 )
+texture = ExtResource( 4 )
+region_enabled = true
+region_rect = Rect2( 116, 41.3, 86, 121 )
+
+[node name="BlueRi" type="Sprite" parent="."]
+visible = false
+modulate = Color( 1, 1, 1, 0.313726 )
+position = Vector2( 293.564, 76.186 )
+scale = Vector2( 0.66, 0.66 )
+texture = ExtResource( 4 )
+region_enabled = true
+region_rect = Rect2( 340, 13, 98, 202 )
+
+[node name="BlueL" type="Sprite" parent="."]
+visible = false
+modulate = Color( 1, 1, 1, 0.313726 )
+position = Vector2( 250.011, 74.4264 )
+scale = Vector2( 0.66, 0.66 )
+texture = ExtResource( 4 )
+region_enabled = true
+region_rect = Rect2( 196, 6, 132, 207 )
+
+[node name="TotalScore" type="Node2D" parent="."]
+
+[node name="Panel" type="Panel" parent="TotalScore"]
+margin_left = 30.0
+margin_top = 121.0
+margin_right = 327.0
+margin_bottom = 158.0
+custom_styles/panel = SubResource( 1 )
+
+[node name="Label" type="Label" parent="TotalScore"]
+margin_left = -10.0
+margin_top = 124.0
+margin_right = 322.0
+margin_bottom = 155.0
+custom_fonts/font = SubResource( 2 )
+text = "519040"
+align = 1
+
+[node name="MiddleScore" type="Node2D" parent="."]
+
+[node name="Label" type="Label" parent="MiddleScore"]
+margin_left = 33.9313
+margin_top = 98.2188
+margin_right = 327.931
+margin_bottom = 119.219
+custom_colors/font_color = Color( 0.623529, 0.917647, 0.0627451, 1 )
+custom_fonts/font = SubResource( 3 )
+text = "4120"
+align = 1
+valign = 1
+
+[node name="Difficulty" type="Node2D" parent="."]
+
+[node name="Sprite" type="Sprite" parent="Difficulty"]
+position = Vector2( 90.4301, 73.8999 )
+scale = Vector2( 0.6, 0.6 )
+texture = ExtResource( 7 )
+region_enabled = true
+region_rect = Rect2( -6.40881, 357.417, 259.252, 158.668 )
+
+[node name="Label" type="Label" parent="Difficulty"]
+margin_left = 31.0535
+margin_top = 88.3997
+margin_right = 131.053
+margin_bottom = 128.4
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 6 )
+text = "Hard"
+align = 1
+valign = 1
+
+[node name="Screenshot" type="Sprite" parent="."]
+visible = false
+modulate = Color( 1, 1, 1, 0.341176 )
+position = Vector2( 165.45, 78.6255 )
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="ScoreC" type="Node2D" parent="."]
+
+[node name="Score" parent="ScoreC" instance=ExtResource( 5 )]
+position = Vector2( 208.17, 27.893 )
+
+[node name="Label" type="Label" parent="ScoreC"]
+margin_left = 246.251
+margin_top = 90.0304
+margin_right = 302.251
+margin_bottom = 107.03
+custom_fonts/font = SubResource( 7 )
+text = "Combo"
+
+[node name="PlayerName" type="Label" parent="."]
+margin_left = 44.7306
+margin_top = 4.47308
+margin_right = 171.731
+margin_bottom = 27.4731
+custom_fonts/font = SubResource( 8 )
+text = "DON CHAN"
