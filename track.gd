@@ -141,8 +141,8 @@ func process_with_time(time, delta):
 	#print("x: ", position_x)
 	#print("curr x:", bars_node.position.x)
 		
-	if (abs(position_x - bars_node.position.x)) >= 200:
-		print("FIX delay! ", position_x - bars_node.position.x)
+	if (bars_node.position.x - position_x) > speed*delta*2:
+		print("FIX delay! ", bars_node.position.x - position_x)
 		bars_node.position.x = position_x	
 	
 	
@@ -184,19 +184,19 @@ func _on_Picker_area_exited(area):
 		#print(area.get_parent())
 		
 func on_red_left_pressed():
-	print("RL")
+	#print("RL")
 	collect_by_type("red")
 	
 func on_red_right_pressed():
-	print("RR")
+	#print("RR")
 	collect_by_type("red")
 
 func on_blue_left_pressed():
-	print("BL")
+	#print("BL")
 	collect_by_type("blue")
 		
 func on_blue_right_pressed():
-	print("BR")
+	#print("BR")
 	collect_by_type("blue")
 	
 

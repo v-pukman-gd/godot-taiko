@@ -39,16 +39,16 @@ __meta__ = {
 }
 
 [node name="BarsPosition" type="Position2D" parent="."]
-position = Vector2( 103.958, 0 )
+position = Vector2( 78, 0 )
 
 [node name="Bars" type="Node2D" parent="."]
-position = Vector2( 103.958, 0 )
+position = Vector2( 78, 0 )
 
 [node name="Picker" type="Area2D" parent="." groups=["area_good", "picker"]]
-position = Vector2( 97.4686, 63.2448 )
+position = Vector2( 78, 64 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Picker"]
-position = Vector2( -18.6631, -0.814026 )
+position = Vector2( 0.0662861, -4.35741 )
 shape = SubResource( 2 )
 
 [connection signal="area_entered" from="Picker" to="." method="_on_Picker_area_entered"]
