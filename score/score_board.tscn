@@ -1,12 +1,12 @@
 [gd_scene load_steps=15 format=2]
 
-[ext_resource path="res://score_bg.png" type="Texture" id=1]
-[ext_resource path="res://score_bg_txt.png" type="Texture" id=2]
-[ext_resource path="res://drum_txt.png" type="Texture" id=3]
-[ext_resource path="res://drum_effects_txt.png" type="Texture" id=4]
-[ext_resource path="res://score.tscn" type="PackedScene" id=5]
+[ext_resource path="res://score/score_bg.png" type="Texture" id=1]
+[ext_resource path="res://score/score_bg_txt.png" type="Texture" id=2]
+[ext_resource path="res://drums/drum_txt.png" type="Texture" id=3]
+[ext_resource path="res://score/drum_effects_txt.png" type="Texture" id=4]
+[ext_resource path="res://score/drum_score.tscn" type="PackedScene" id=5]
 [ext_resource path="res://fonts/TnT.ttf" type="DynamicFontData" id=6]
-[ext_resource path="res://diff_levels.png" type="Texture" id=7]
+[ext_resource path="res://score/diff_levels.png" type="Texture" id=7]
 [ext_resource path="res://fonts/Kozuka.otf" type="DynamicFontData" id=8]
 
 [sub_resource type="StyleBoxFlat" id=1]
@@ -130,9 +130,9 @@ custom_fonts/font = SubResource( 2 )
 text = "519040"
 align = 1
 
-[node name="MiddleScore" type="Node2D" parent="."]
+[node name="TempScore" type="Node2D" parent="."]
 
-[node name="Label" type="Label" parent="MiddleScore"]
+[node name="Label" type="Label" parent="TempScore"]
 margin_left = 33.9313
 margin_top = 98.2188
 margin_right = 327.931
@@ -172,12 +172,12 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="ScoreC" type="Node2D" parent="."]
+[node name="DrumScoreC" type="Node2D" parent="."]
 
-[node name="Score" parent="ScoreC" instance=ExtResource( 5 )]
+[node name="DrumScore" parent="DrumScoreC" instance=ExtResource( 5 )]
 position = Vector2( 208.17, 27.893 )
 
-[node name="Label" type="Label" parent="ScoreC"]
+[node name="Label" type="Label" parent="DrumScoreC"]
 margin_left = 246.251
 margin_top = 90.0304
 margin_right = 302.251

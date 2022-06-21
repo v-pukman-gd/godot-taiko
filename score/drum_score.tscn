@@ -19,7 +19,7 @@ colors = PoolColorArray( 1, 0.0625, 0.0625, 1, 0.953345, 1, 0.540625, 1, 1, 0.06
 gradient = SubResource( 3 )
 width = 512
 
-[node name="Score" type="Node2D"]
+[node name="DrumScore" type="Node2D"]
 
 [node name="Label" type="Label" parent="."]
 light_mask = 2

@@ -36,6 +36,7 @@ func collect():
 	if failed: return
 	
 	collected = true
+	Global.emit_signal("note_collected")
 	hide()
 		
 func fail():

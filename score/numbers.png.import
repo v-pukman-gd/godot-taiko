@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/drum_effects_txt.png-af8872cf019a17159658038c57ff0de3.stex"
+path="res://.import/numbers.png-e13a739529c2f3248a78986f3c07098c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://drum_effects_txt.png"
-dest_files=[ "res://.import/drum_effects_txt.png-af8872cf019a17159658038c57ff0de3.stex" ]
+source_file="res://score/numbers.png"
+dest_files=[ "res://.import/numbers.png-e13a739529c2f3248a78986f3c07098c.stex" ]
 
 [params]
 

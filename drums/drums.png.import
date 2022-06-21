@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/drum_txt.png-22a7e486d1d0479ef149865031944297.stex"
+path="res://.import/drums.png-77bd4fe94e8d108b7925c053520c1391.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://drum_txt.png"
-dest_files=[ "res://.import/drum_txt.png-22a7e486d1d0479ef149865031944297.stex" ]
+source_file="res://drums/drums.png"
+dest_files=[ "res://.import/drums.png-77bd4fe94e8d108b7925c053520c1391.stex" ]
 
 [params]
 

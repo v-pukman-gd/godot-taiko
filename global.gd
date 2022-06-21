@@ -1,6 +1,7 @@
 extends Node
 
 signal bar_index_updated
+signal note_collected
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
