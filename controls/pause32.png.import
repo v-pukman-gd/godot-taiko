@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/pause32.png-f6dae058e824251dc8e2463830a0be1d.stex"
+path="res://.import/pause32.png-1f9905217131c5a62a11c6ca448bb01d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://pause32.png"
-dest_files=[ "res://.import/pause32.png-f6dae058e824251dc8e2463830a0be1d.stex" ]
+source_file="res://controls/pause32.png"
+dest_files=[ "res://.import/pause32.png-1f9905217131c5a62a11c6ca448bb01d.stex" ]
 
 [params]
 

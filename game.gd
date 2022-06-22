@@ -21,7 +21,7 @@ var pre_start_length
 
 var data_ready = false
 
-var track_scn = preload("res://track.tscn")
+var track_scn = preload("res://track/track.tscn")
 var track
 
 var music_scn = preload("res://music.tscn")
@@ -42,7 +42,7 @@ func load_map():
 	return JSON.parse(content).get_result()
 	
 func setup():
-	print("setup:", start_bar_index)
+	print("start at:", start_bar_index)
 	tempo = int(map.tempo)
 	bar_length_in_m = 1600 # Godot meters
 	quarter_time_in_sec = 60/float(tempo) # 60/60 = 1, 60/85 = 0.71

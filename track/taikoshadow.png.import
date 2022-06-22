@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/taikoshadow.png-e1417c71f1bdd4b17255a51485d58474.stex"
+path="res://.import/taikoshadow.png-e4e15661df821bc903a6337f21ca591d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://taikoshadow.png"
-dest_files=[ "res://.import/taikoshadow.png-e1417c71f1bdd4b17255a51485d58474.stex" ]
+source_file="res://track/taikoshadow.png"
+dest_files=[ "res://.import/taikoshadow.png-e4e15661df821bc903a6337f21ca591d.stex" ]
 
 [params]
 

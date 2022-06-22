@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://theme.tres" type="Theme" id=1]
-[ext_resource path="res://refresh32.png" type="Texture" id=2]
-[ext_resource path="res://control_btn.gd" type="Script" id=3]
-[ext_resource path="res://pause32.png" type="Texture" id=4]
+[ext_resource path="res://controls/refresh32.png" type="Texture" id=2]
+[ext_resource path="res://controls/control_btn.gd" type="Script" id=3]
+[ext_resource path="res://controls/pause32.png" type="Texture" id=4]
 
 [sub_resource type="ImageTexture" id=1]
 

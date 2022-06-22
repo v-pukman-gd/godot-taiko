@@ -2,7 +2,7 @@ extends Node2D
 
 var map_bar_index = -1  # track exact bar index 
 
-var bar_scn = preload("res://bar.tscn")
+var bar_scn = preload("res://bar/bar.tscn")
 
 onready var bars_node = $Bars
 var bars = []
@@ -156,7 +156,7 @@ func process_with_time(time, delta):
 				map_bar_index = bar.index
 				#emit_signal("bar_index_updated", map_bar_index)
 				#print("bar_index_updated:", map_bar_index)
-				Global.emit_signal("bar_index_updated", map_bar_index)
+				GameEvent.emit_signal("bar_index_updated", map_bar_index)
 			
 
 func remove_bar(bar):

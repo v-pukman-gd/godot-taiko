@@ -20,7 +20,7 @@ config/icon="res://icon.png"
 
 [autoload]
 
-Global="*res://global.tscn"
+GameEvent="*res://game_event.gd"
 
 [display]
 

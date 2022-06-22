@@ -1,6 +1,6 @@
 extends Node2D
 
-var note_scn = preload("res://note.tscn")
+var note_scn = preload("res://note/note.tscn")
 
 var notes_data = [
 	{
