@@ -42,10 +42,11 @@ var notes_data = [
 
 var index = 0
 var note_scale = 0.5
-var length = 1600
+var length = 1600 
 
 func _ready():
 	add_notes()
+	$Sprite2.position.x = length/2 
 
 func add_notes():
 	for note_data in notes_data:
@@ -67,4 +68,4 @@ func add_note(note_data):
 	note.position = Vector2(float(note_data.pos)*note_scale, -20)
 	
 	$Notes.add_child(note)
-
+	

@@ -43,6 +43,7 @@ func fail():
 	if collected: return
 	
 	failed = true
+	GameEvent.emit_signal("note_failed")
 	#$Sprite.material = fail_mat
 #func is_trigger_pressed():
 #

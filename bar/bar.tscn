@@ -18,4 +18,9 @@ rotation = 1.5708
 scale = Vector2( 4, 2 )
 texture = SubResource( 2 )
 
+[node name="Sprite2" type="Sprite" parent="."]
+rotation = 1.5708
+scale = Vector2( 4, 2 )
+texture = SubResource( 2 )
+
 [node name="Notes" type="Node2D" parent="."]
