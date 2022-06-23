@@ -1,12 +1,81 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://drums/drums.tscn" type="PackedScene" id=1]
 [ext_resource path="res://game.gd" type="Script" id=2]
 [ext_resource path="res://score/score_board.tscn" type="PackedScene" id=3]
+[ext_resource path="res://note/note_sprites.png" type="Texture" id=4]
 [ext_resource path="res://TaikoNoTatsujinDrumnFun_Screenshot_02.jpeg" type="Texture" id=5]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="Animation" id=2]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Node2D/Sprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 411.59, 256.355 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Node2D/Sprite:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "collected"
+length = 1.5
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("Node2D/Sprite:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 411.59, 256.355 ), Vector2( 530.344, 102.415 ), Vector2( 791.309, -25.1347 ), Vector2( 1040.54, 14.4498 ), Vector2( 1191.55, 144.932 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Node2D/Sprite:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = false
+tracks/1/keys = {
+"times": PoolRealArray(  ),
+"transitions": PoolRealArray(  ),
+"update": 0,
+"values": [  ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Node2D/Sprite:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1, 1.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
 
 [node name="Game" type="Node2D"]
 script = ExtResource( 2 )
@@ -29,3 +98,17 @@ position = Vector2( 332, 192 )
 
 [node name="ScoreBoard" parent="." instance=ExtResource( 3 )]
 position = Vector2( 1.98883, 191.924 )
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Node2D"]
+root_node = NodePath("../..")
+playback_speed = 1.5
+anims/RESET = SubResource( 2 )
+anims/collected = SubResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="Node2D"]
+position = Vector2( 411.59, 256.355 )
+texture = ExtResource( 4 )
+hframes = 9
+frame = 1
