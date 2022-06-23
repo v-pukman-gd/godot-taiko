@@ -13,10 +13,10 @@ func _ready():
 	GameEvent.connect("note_collected", self, "on_note_collected")
 	GameEvent.connect("note_failed", self, "on_note_failed")
 	
-func on_note_collected():
+func on_note_collected(note_score):
 	notes_count += 1
-	temp_score = COLLECTED_SCORE
-	total_score += COLLECTED_SCORE
+	temp_score = note_score
+	total_score += note_score
 	update_labels()
 
 func on_note_failed():
