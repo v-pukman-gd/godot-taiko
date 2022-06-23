@@ -2,18 +2,39 @@ extends Node2D
 
 var notes_count = 0
 
+var total_score = 0
+var temp_score = 0
+
+const COLLECTED_SCORE = 2020
+
 func _ready():
-	update_notes_count_label()
+	update_labels()
+	
 	GameEvent.connect("note_collected", self, "on_note_collected")
 	GameEvent.connect("note_failed", self, "on_note_failed")
 	
 func on_note_collected():
 	notes_count += 1
-	update_notes_count_label()
+	temp_score = COLLECTED_SCORE
+	total_score += COLLECTED_SCORE
+	update_labels()
 
 func on_note_failed():
 	notes_count = 0
-	update_notes_count_label()
+	update_labels()
 	
-func update_notes_count_label():
+func update_labels():
+	# notes count
 	$DrumScoreC/NotesCount.notes_count = notes_count
+
+	# temp score
+	$TempScore/Label.text = str(temp_score)
+	if temp_score == 0:
+		$TempScore/Label.hide()
+	else:
+		$TempScore/Label.show()
+		
+	# total score
+	$TotalScore/Label.text = str(total_score)
+	
+	
