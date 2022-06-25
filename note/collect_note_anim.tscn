@@ -44,7 +44,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 411.59, 256.355 ), Vector2( 530.344, 102.415 ), Vector2( 791.309, -25.1347 ), Vector2( 1040.54, 14.4498 ), Vector2( 1191.55, 144.932 ) ]
+"values": [ Vector2( 411.59, 256.355 ), Vector2( 530.344, 102.415 ), Vector2( 791.309, -25.1347 ), Vector2( 1040.54, 14.4498 ), Vector2( 1191.2, 143.192 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Sprite:modulate")
