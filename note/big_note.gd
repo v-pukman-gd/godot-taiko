@@ -5,6 +5,9 @@ const SCORE = 4040
 var side_l = false
 var side_r = false
 
+func _init():
+	size_type = "big"
+
 func _on_collect(side):
 	if side == "L": side_l = true
 	elif side == "R": side_r = true

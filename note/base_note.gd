@@ -1,6 +1,7 @@
 extends Node2D
 
 var color_type = "blue"
+var size_type = "normal"
 
 var collected = false
 var failed = false

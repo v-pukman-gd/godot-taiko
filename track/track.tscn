@@ -51,5 +51,8 @@ position = Vector2( 78, 64 )
 position = Vector2( 0.0662861, -4.35741 )
 shape = SubResource( 2 )
 
+[node name="CollectedNotesC" type="Node2D" parent="."]
+position = Vector2( -333.236, -197.188 )
+
 [connection signal="area_entered" from="Picker" to="." method="_on_Picker_area_entered"]
 [connection signal="area_exited" from="Picker" to="." method="_on_Picker_area_exited"]

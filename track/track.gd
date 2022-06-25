@@ -3,6 +3,7 @@ extends Node2D
 var map_bar_index = -1  # track exact bar index 
 
 var bar_scn = preload("res://bar/bar.tscn")
+var collect_anim = preload("res://note/collect_note_anim.tscn")
 
 onready var bars_node = $Bars
 var bars = []
@@ -208,8 +209,14 @@ func collect_by_type(color_type, side):
 				var collected = n.collect(side)
 				if collected:
 					colliding_notes.erase(n)
+					play_collect_anim(n)
 					break
 		elif d < -45 or n.color_type != color_type:
 			n.fail()
 			colliding_notes.erase(n)
 			
+func play_collect_anim(note):
+	var anim = collect_anim.instance()
+	anim.color_type = note.color_type
+	anim.size_type = note.size_type
+	$CollectedNotesC.add_child(anim)
