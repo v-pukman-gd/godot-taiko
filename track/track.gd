@@ -216,12 +216,13 @@ func collect_by_type(color_type, side):
 			colliding_notes.erase(n)
 			
 func play_collect_anim(note):
-	var anim = collect_anim.instance()
-	
+	var anim = collect_anim.instance()	
 	anim.color_type = note.color_type
 	anim.size_type = note.size_type
 	anim.get_node("AnimationPlayer").connect("animation_finished", self, "remove_collect_anim", [anim])
 	$CollectedNotesC.add_child(anim)
+	
+	$PickerAnim.play()
 	
 func remove_collect_anim(name, anim):
 	anim.queue_free()

@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://track/track.gd" type="Script" id=1]
 [ext_resource path="res://track/taikoshadow.png" type="Texture" id=2]
+[ext_resource path="res://track/picker_anim.tscn" type="PackedScene" id=3]
 
 [sub_resource type="Gradient" id=3]
 offsets = PoolRealArray( 0, 0.791667, 1 )
@@ -50,6 +51,10 @@ position = Vector2( 78, 64 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Picker"]
 position = Vector2( 0.0662861, -4.35741 )
 shape = SubResource( 2 )
+
+[node name="PickerAnim" parent="." instance=ExtResource( 3 )]
+position = Vector2( 78, 61 )
+scale = Vector2( 0.6, 0.6 )
 
 [node name="CollectedNotesC" type="Node2D" parent="."]
 position = Vector2( -331, -192 )
