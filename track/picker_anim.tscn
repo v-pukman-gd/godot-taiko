@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=61 format=2]
 
 [ext_resource path="res://track/picker_anim.gd" type="Script" id=1]
 [ext_resource path="res://track/picker_anim_txt.png" type="Texture" id=2]
@@ -15,6 +15,41 @@
 [ext_resource path="res://track/hit_effect/hit_effect_13.png" type="Texture" id=13]
 [ext_resource path="res://track/hit_effect/hit_effect_08.png" type="Texture" id=14]
 [ext_resource path="res://track/hit_effect/hit_effect_06.png" type="Texture" id=15]
+[ext_resource path="res://track/notes_explosion.png" type="Texture" id=16]
+[ext_resource path="res://track/judgement_halo.png" type="Texture" id=17]
+
+[sub_resource type="AtlasTexture" id=41]
+flags = 4
+atlas = ExtResource( 16 )
+region = Rect2( 0, 0, 222, 222 )
+
+[sub_resource type="AtlasTexture" id=42]
+flags = 4
+atlas = ExtResource( 16 )
+region = Rect2( 0, 222, 222, 222 )
+
+[sub_resource type="AtlasTexture" id=43]
+flags = 4
+atlas = ExtResource( 16 )
+region = Rect2( 0, 444, 222, 222 )
+
+[sub_resource type="AtlasTexture" id=44]
+flags = 4
+atlas = ExtResource( 16 )
+region = Rect2( 0, 666, 222, 222 )
+
+[sub_resource type="AtlasTexture" id=45]
+flags = 4
+atlas = ExtResource( 16 )
+region = Rect2( 0, 888, 222, 222 )
+
+[sub_resource type="SpriteFrames" id=38]
+animations = [ {
+"frames": [ SubResource( 41 ), SubResource( 42 ), SubResource( 43 ), SubResource( 44 ), SubResource( 45 ) ],
+"loop": true,
+"name": "default",
+"speed": 30.0
+} ]
 
 [sub_resource type="AtlasTexture" id=11]
 flags = 4
@@ -77,10 +112,163 @@ animations = [ {
 "speed": 20.0
 } ]
 
+[sub_resource type="Gradient" id=39]
+offsets = PoolRealArray( 0.00666667 )
+colors = PoolColorArray( 1, 1, 1, 1 )
+
+[sub_resource type="GradientTexture" id=40]
+gradient = SubResource( 39 )
+
+[sub_resource type="AtlasTexture" id=46]
+flags = 4
+atlas = ExtResource( 16 )
+region = Rect2( 444, 0, 222, 222 )
+
+[sub_resource type="AtlasTexture" id=47]
+flags = 4
+atlas = ExtResource( 16 )
+region = Rect2( 444, 222, 222, 222 )
+
+[sub_resource type="AtlasTexture" id=48]
+flags = 4
+atlas = ExtResource( 16 )
+region = Rect2( 444, 444, 222, 222 )
+
+[sub_resource type="AtlasTexture" id=49]
+flags = 4
+atlas = ExtResource( 16 )
+region = Rect2( 444, 666, 222, 222 )
+
+[sub_resource type="SpriteFrames" id=50]
+animations = [ {
+"frames": [ SubResource( 46 ), SubResource( 47 ), SubResource( 48 ), SubResource( 49 ) ],
+"loop": true,
+"name": "default",
+"speed": 30.0
+} ]
+
+[sub_resource type="AtlasTexture" id=51]
+flags = 4
+atlas = ExtResource( 17 )
+region = Rect2( 0, 0, 140, 140 )
+
+[sub_resource type="AtlasTexture" id=52]
+flags = 4
+atlas = ExtResource( 17 )
+region = Rect2( 140, 0, 140, 140 )
+
+[sub_resource type="AtlasTexture" id=53]
+flags = 4
+atlas = ExtResource( 17 )
+region = Rect2( 280, 0, 140, 140 )
+
+[sub_resource type="AtlasTexture" id=54]
+flags = 4
+atlas = ExtResource( 17 )
+region = Rect2( 420, 0, 140, 140 )
+
+[sub_resource type="SpriteFrames" id=59]
+animations = [ {
+"frames": [ SubResource( 51 ), SubResource( 52 ), SubResource( 53 ), SubResource( 54 ) ],
+"loop": true,
+"name": "default",
+"speed": 20.0
+} ]
+
+[sub_resource type="AtlasTexture" id=60]
+flags = 4
+atlas = ExtResource( 17 )
+region = Rect2( 0, 140, 140, 140 )
+
+[sub_resource type="AtlasTexture" id=61]
+flags = 4
+atlas = ExtResource( 17 )
+region = Rect2( 140, 140, 140, 140 )
+
+[sub_resource type="AtlasTexture" id=62]
+flags = 4
+atlas = ExtResource( 17 )
+region = Rect2( 280, 140, 140, 140 )
+
+[sub_resource type="AtlasTexture" id=63]
+flags = 4
+atlas = ExtResource( 17 )
+region = Rect2( 420, 140, 140, 140 )
+
+[sub_resource type="SpriteFrames" id=64]
+animations = [ {
+"frames": [ SubResource( 60 ), SubResource( 61 ), SubResource( 62 ), SubResource( 63 ) ],
+"loop": true,
+"name": "default",
+"speed": 20.0
+} ]
+
+[sub_resource type="AtlasTexture" id=65]
+flags = 4
+atlas = ExtResource( 17 )
+region = Rect2( 0, 280, 140, 140 )
+
+[sub_resource type="AtlasTexture" id=66]
+flags = 4
+atlas = ExtResource( 17 )
+region = Rect2( 140, 280, 140, 140 )
+
+[sub_resource type="AtlasTexture" id=67]
+flags = 4
+atlas = ExtResource( 17 )
+region = Rect2( 280, 280, 140, 140 )
+
+[sub_resource type="AtlasTexture" id=68]
+flags = 4
+atlas = ExtResource( 17 )
+region = Rect2( 420, 280, 140, 140 )
+
+[sub_resource type="SpriteFrames" id=69]
+animations = [ {
+"frames": [ SubResource( 65 ), SubResource( 66 ), SubResource( 67 ), SubResource( 68 ) ],
+"loop": true,
+"name": "default",
+"speed": 20.0
+} ]
+
+[sub_resource type="AtlasTexture" id=70]
+flags = 4
+atlas = ExtResource( 17 )
+region = Rect2( 0, 420, 140, 140 )
+
+[sub_resource type="AtlasTexture" id=71]
+flags = 4
+atlas = ExtResource( 17 )
+region = Rect2( 140, 420, 140, 140 )
+
+[sub_resource type="AtlasTexture" id=72]
+flags = 4
+atlas = ExtResource( 17 )
+region = Rect2( 280, 420, 140, 140 )
+
+[sub_resource type="AtlasTexture" id=73]
+flags = 4
+atlas = ExtResource( 17 )
+region = Rect2( 420, 420, 140, 140 )
+
+[sub_resource type="SpriteFrames" id=74]
+animations = [ {
+"frames": [ SubResource( 70 ), SubResource( 71 ), SubResource( 72 ), SubResource( 73 ) ],
+"loop": true,
+"name": "default",
+"speed": 20.0
+} ]
+
 [node name="PickerAnim" type="Node2D"]
 script = ExtResource( 1 )
 
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+visible = false
+scale = Vector2( 1.2, 1.2 )
+frames = SubResource( 38 )
+
 [node name="Anim1" type="AnimatedSprite" parent="."]
+visible = false
 frames = SubResource( 5 )
 
 [node name="Anim2" type="AnimatedSprite" parent="."]
@@ -88,3 +276,35 @@ visible = false
 frames = SubResource( 10 )
 frame = 3
 playing = true
+
+[node name="Light2D" type="Light2D" parent="."]
+visible = false
+position = Vector2( 0, -27.4581 )
+scale = Vector2( 1, 390.483 )
+texture = SubResource( 40 )
+mode = 2
+
+[node name="AnimatedSprite2" type="AnimatedSprite" parent="."]
+visible = false
+scale = Vector2( 1.3, 1.3 )
+frames = SubResource( 50 )
+frame = 3
+
+[node name="AnimatedSprite3" type="AnimatedSprite" parent="."]
+visible = false
+scale = Vector2( 2, 2 )
+frames = SubResource( 59 )
+
+[node name="AnimatedSprite4" type="AnimatedSprite" parent="."]
+visible = false
+scale = Vector2( 2, 2 )
+frames = SubResource( 64 )
+
+[node name="AnimatedSprite5" type="AnimatedSprite" parent="."]
+scale = Vector2( 2, 2 )
+frames = SubResource( 69 )
+
+[node name="AnimatedSprite6" type="AnimatedSprite" parent="."]
+visible = false
+scale = Vector2( 2, 2 )
+frames = SubResource( 74 )

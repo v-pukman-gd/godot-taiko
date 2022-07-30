@@ -1,17 +1,19 @@
 extends Node2D
 
+onready var anim = $AnimatedSprite5
+onready var anim2 = $AnimatedSprite6
 
 func _ready():
 	hide()
-	$Anim1.connect("animation_finished", self, "hide")
-	#play()
+	anim.connect("animation_finished", self, "hide")
 
 func play():
 	show()
 	
-	$Anim1.frame = 0
-	$Anim1.play()
+	anim.frame = 0
+	anim.play()
 	
-	$Anim2.frame = 0
-	$Anim2.play()
+	anim2.frame = 0
+	anim2.play()
+
 	
