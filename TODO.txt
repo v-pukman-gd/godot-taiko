@@ -6,6 +6,8 @@ https://www.youtube.com/watch?v=z643GMyn3KY iOS
 
 https://www.youtube.com/watch?v=iXeBE4v0uj0 - takes assets, turtle
 
+https://www.youtube.com/watch?v=fBFWCDfh9Z0 - hit effect example
+
 Tutoral plan:
 part 1 - show godot, mboy site, launch / show ref images
 part 2 - mapping in editor / show json in format ?? load map in game -> test in inspector  ??

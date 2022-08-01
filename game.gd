@@ -9,7 +9,6 @@ var map_path = "res://songs/hansatom_-_Vitamins_CC_BY_NC/hansatom_-_Vitamins_CC_
 #var audio_path = "res://songs/Middle_of_The_Night/Middle_of_The_Night_CC_BY_SA.ogg"
 #var map_path = "res://songs/Middle_of_The_Night/Middle_of_The_Night_CC_BY_SA.mboy"
 
-
 var tempo
 var bar_length_in_m
 var quarter_time_in_sec
@@ -73,7 +72,7 @@ func setup():
 	track.speed = speed
 	track.note_scale = note_scale
 	#track.position = $TrackPos.position
-	$TrackC.add_child(track)
+	$TrackC.add_child(track)	
 	
 	$Drums.connect("red_left", track, "on_red_left_pressed")
 	$Drums.connect("red_right", track, "on_red_right_pressed")
@@ -81,7 +80,12 @@ func setup():
 	$Drums.connect("blue_left", track, "on_blue_left_pressed")
 	$Drums.connect("blue_right", track, "on_blue_right_pressed")
 	
+	GameEvent.connect("note_collected", self, "on_note_collected")
+	
 	data_ready = true
+	
+func on_note_collected(note):
+	$PickerAnim.play(note.size_type, true)
 
 func _process(delta):
 	if not data_ready:

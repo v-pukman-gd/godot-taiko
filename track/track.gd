@@ -222,7 +222,5 @@ func play_collect_anim(note):
 	anim.get_node("AnimationPlayer").connect("animation_finished", self, "remove_collect_anim", [anim])
 	$CollectedNotesC.add_child(anim)
 	
-	$PickerAnim.play()
-	
 func remove_collect_anim(name, anim):
 	anim.queue_free()
