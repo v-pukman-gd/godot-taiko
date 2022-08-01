@@ -80,12 +80,12 @@ func setup():
 	$Drums.connect("blue_left", track, "on_blue_left_pressed")
 	$Drums.connect("blue_right", track, "on_blue_right_pressed")
 	
-	GameEvent.connect("note_collected", self, "on_note_collected")
+	#GameEvent.connect("note_collected", self, "on_note_collected")
 	
 	data_ready = true
 	
-func on_note_collected(note):
-	$PickerAnim.play(note.size_type, true)
+#func on_note_collected(note):
+#	$PickerAnim.play(note.size_type, true)
 
 func _process(delta):
 	if not data_ready:

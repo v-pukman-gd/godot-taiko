@@ -1,7 +1,10 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://track/track.gd" type="Script" id=1]
 [ext_resource path="res://track/taikoshadow.png" type="Texture" id=2]
+[ext_resource path="res://track/picker_anim.tscn" type="PackedScene" id=3]
+[ext_resource path="res://TaikoNoTatsujinDrumnFun_Screenshot_02.jpeg" type="Texture" id=4]
+[ext_resource path="res://track_progress/track_progress.tscn" type="PackedScene" id=5]
 
 [sub_resource type="Gradient" id=3]
 offsets = PoolRealArray( 0, 0.791667, 1 )
@@ -19,6 +22,11 @@ radius = 75.966
 
 [node name="Track" type="Node2D"]
 script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+visible = false
+position = Vector2( 305.672, 166.841 )
+texture = ExtResource( 4 )
 
 [node name="Bg" type="Panel" parent="."]
 margin_right = 40.0
@@ -38,6 +46,9 @@ __meta__ = {
 "_edit_lock_": true
 }
 
+[node name="PickerAnim" parent="." instance=ExtResource( 3 )]
+position = Vector2( 79, 61 )
+
 [node name="BarsPosition" type="Position2D" parent="."]
 position = Vector2( 78, 0 )
 
@@ -53,6 +64,9 @@ shape = SubResource( 2 )
 
 [node name="CollectedNotesC" type="Node2D" parent="."]
 position = Vector2( -331, -192 )
+
+[node name="TrackProgress" parent="." instance=ExtResource( 5 )]
+position = Vector2( 202.544, -63.874 )
 
 [connection signal="area_entered" from="Picker" to="." method="_on_Picker_area_entered"]
 [connection signal="area_exited" from="Picker" to="." method="_on_Picker_area_exited"]

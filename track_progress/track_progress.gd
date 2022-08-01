@@ -1,21 +1,18 @@
 extends Node2D
 
+var notes_count = 100 #setget set_notes_count, _
+var curr_value = 0
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
-
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	GameEvent.connect("note_collected", self, "on_note_collected")
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
-
+func on_note_collected(note):
+	curr_value += 50.0/notes_count
+	print("notes_count", notes_count, "curr_val", curr_value)
+	$Texture/TextureProgress.value = int(curr_value)
+	
 
 func _on_Timer_timeout():
-	#$ProgressBar.value += 1
-	$Texture/TextureProgress.value += 1
+	#$Texture/TextureProgress.value += 1
+	pass

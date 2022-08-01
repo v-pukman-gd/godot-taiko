@@ -7,6 +7,7 @@ var collect_anim = preload("res://note/collect_note_anim.tscn")
 
 onready var bars_node = $Bars
 var bars = []
+var notes_count = 0
 
 var bars_data = [
 		{
@@ -110,6 +111,20 @@ func _ready():
 		add_bar()
 		
 	#bars_node.position.x -= 4 * 400 * note_scale * curr_bar_index
+	
+	var extended = false
+	for bar in bars_data:
+		for note in bar.notes:
+			if extended:
+				extended = false
+				continue
+				
+			if note.markers.has("extended"):
+				extended = true
+			
+			notes_count += 1
+			
+	$TrackProgress.notes_count = notes_count
 		
 	
 func add_bar():
@@ -221,6 +236,8 @@ func play_collect_anim(note):
 	anim.size_type = note.size_type
 	anim.get_node("AnimationPlayer").connect("animation_finished", self, "remove_collect_anim", [anim])
 	$CollectedNotesC.add_child(anim)
+	
+	$PickerAnim.play(note.size_type, true)
 	
 func remove_collect_anim(name, anim):
 	anim.queue_free()
