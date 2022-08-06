@@ -3,7 +3,7 @@
 [ext_resource path="res://track_progress/track_progress.gd" type="Script" id=1]
 [ext_resource path="res://track_progress/progress_bar_FINALpng.png" type="Texture" id=2]
 [ext_resource path="res://track_progress/progress_bar_bg_FINAL.png" type="Texture" id=3]
-[ext_resource path="res://track_progress/progress_bar_border_fix.png" type="Texture" id=4]
+[ext_resource path="res://track_progress/progress_bar_border_fix2.png" type="Texture" id=4]
 
 [node name="TrackProgress" type="Node2D"]
 script = ExtResource( 1 )

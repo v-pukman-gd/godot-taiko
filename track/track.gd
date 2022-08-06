@@ -5,6 +5,8 @@ var map_bar_index = -1  # track exact bar index
 var bar_scn = preload("res://bar/bar.tscn")
 var collect_anim = preload("res://note/collect_note_anim.tscn")
 
+var pile_anim = preload("res://track/pile_anim.tscn")
+
 onready var bars_node = $Bars
 var bars = []
 var notes_count = 0
@@ -239,5 +241,14 @@ func play_collect_anim(note):
 	
 	$PickerAnim.play(note.size_type, true)
 	
+	#yield(get_tree().create_timer(0.5), "timeout")
+	
+	play_pile_anim()
+	
 func remove_collect_anim(name, anim):
 	anim.queue_free()
+	
+func play_pile_anim():
+	var anim2 = pile_anim.instance()
+	$PileC.add_child(anim2)
+	
