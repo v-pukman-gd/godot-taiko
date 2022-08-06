@@ -240,8 +240,7 @@ func play_collect_anim(note):
 	$CollectedNotesC.add_child(anim)
 	
 	$PickerAnim.play(note.size_type, true)
-	
-	#yield(get_tree().create_timer(0.5), "timeout")
+	$PickerAnimLabel.play(note.size_type, true)
 	
 	play_pile_anim()
 	
@@ -251,4 +250,7 @@ func remove_collect_anim(name, anim):
 func play_pile_anim():
 	var anim2 = pile_anim.instance()
 	$PileC.add_child(anim2)
+	anim2.get_node("AnimationPlayer").connect("animation_finished", self, "remove_pile_anim", [anim2])
 	
+func remove_pile_anim(name, anim2):
+	anim2.queue_free()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://track/track.gd" type="Script" id=1]
 [ext_resource path="res://track/taikoshadow.png" type="Texture" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://TaikoNoTatsujinDrumnFun_Screenshot_02.jpeg" type="Texture" id=4]
 [ext_resource path="res://track_progress/track_progress.tscn" type="PackedScene" id=5]
 [ext_resource path="res://taiko_screen.jpeg" type="Texture" id=6]
+[ext_resource path="res://track/picker_anim_label.tscn" type="PackedScene" id=7]
 [ext_resource path="res://track/pile.png" type="Texture" id=8]
 
 [sub_resource type="Gradient" id=3]
@@ -57,18 +58,33 @@ __meta__ = {
 [node name="PickerAnim" parent="." instance=ExtResource( 3 )]
 position = Vector2( 79, 61 )
 
+[node name="PickerAnimLabel" parent="." instance=ExtResource( 7 )]
+position = Vector2( 79.071, 60.8777 )
+
 [node name="BarsPosition" type="Position2D" parent="."]
 position = Vector2( 78, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Bars" type="Node2D" parent="."]
 position = Vector2( 78, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Picker" type="Area2D" parent="." groups=["area_good", "picker"]]
 position = Vector2( 78, 64 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Picker"]
 position = Vector2( 0.0662861, -4.35741 )
 shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="TrackProgress" parent="." instance=ExtResource( 5 )]
 position = Vector2( 202.544, -63.874 )
@@ -78,12 +94,21 @@ modulate = Color( 0.690196, 0.701961, 0.980392, 1 )
 position = Vector2( 856, -52 )
 scale = Vector2( 0.6, 0.6 )
 texture = ExtResource( 8 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="CollectedNotesC" type="Node2D" parent="."]
 position = Vector2( -328, -192 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="PileC" type="Node2D" parent="."]
 position = Vector2( 856, -52 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [connection signal="area_entered" from="Picker" to="." method="_on_Picker_area_entered"]
 [connection signal="area_exited" from="Picker" to="." method="_on_Picker_area_exited"]
