@@ -35,13 +35,13 @@ func _unhandled_input(event):
 						
 	elif event is InputEventKey:
 		if event.pressed:
-			if event.scancode == KEY_A:
+			if event.scancode == KEY_F:
 				on_red_pressed('L')
-			elif event.scancode == KEY_S:
+			elif event.scancode == KEY_J:
 				on_red_pressed('R')
-			elif event.scancode == KEY_K:
+			elif event.scancode == KEY_D:
 				on_blue_pressed('L')
-			elif event.scancode == KEY_L:
+			elif event.scancode == KEY_K:
 				on_blue_pressed('R')
 
 

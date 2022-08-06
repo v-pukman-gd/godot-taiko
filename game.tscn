@@ -12,11 +12,11 @@ bg_color = Color( 0, 0, 0, 1 )
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
-visible = false
 position = Vector2( 640, 360 )
 texture = ExtResource( 5 )
 
 [node name="Panel" type="Panel" parent="."]
+visible = false
 margin_left = -92.9896
 margin_top = 183.414
 margin_right = 1407.01

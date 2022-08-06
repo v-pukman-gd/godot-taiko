@@ -1,3 +1,4 @@
+tool
 extends "res://note/base_note.gd"
 
 const SCORE = 2020
