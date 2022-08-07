@@ -80,12 +80,18 @@ func setup():
 	$Drums.connect("blue_left", track, "on_blue_left_pressed")
 	$Drums.connect("blue_right", track, "on_blue_right_pressed")
 	
-	#GameEvent.connect("note_collected", self, "on_note_collected")
+	# set title
+	$Title/Label.text = join_arr([map.audio.artist, map.audio.title], " - ")
+	$Title/Genre/Label.text = join_arr([map.audio.genre, map.audio.subgenre], " / ")
 	
 	data_ready = true
 	
-#func on_note_collected(note):
-#	$PickerAnim.play(note.size_type, true)
+func join_arr(arr, delimiter):
+	var presents = []
+	for el in arr: 
+		if str(el) != "": presents.append(el)
+		
+	return PoolStringArray(presents).join(delimiter)
 
 func _process(delta):
 	if not data_ready:

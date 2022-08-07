@@ -1,18 +1,41 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://drums/drums.tscn" type="PackedScene" id=1]
 [ext_resource path="res://game.gd" type="Script" id=2]
 [ext_resource path="res://score/score_board.tscn" type="PackedScene" id=3]
+[ext_resource path="res://fonts/TnT.ttf" type="DynamicFontData" id=4]
 [ext_resource path="res://TaikoNoTatsujinDrumnFun_Screenshot_02.jpeg" type="Texture" id=5]
+[ext_resource path="res://fonts/Kozuka.otf" type="DynamicFontData" id=6]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 25
+outline_size = 4
+outline_color = Color( 0, 0, 0, 1 )
+use_filter = true
+font_data = ExtResource( 4 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.819608, 0.639216, 0.0705882, 1 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 20
+
+[sub_resource type="DynamicFont" id=4]
+size = 13
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+use_filter = true
+font_data = ExtResource( 6 )
 
 [node name="Game" type="Node2D"]
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
-visible = false
 position = Vector2( 640, 360 )
 texture = ExtResource( 5 )
 
@@ -22,6 +45,40 @@ margin_top = 183.414
 margin_right = 1407.01
 margin_bottom = 363.414
 custom_styles/panel = SubResource( 1 )
+
+[node name="Title" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="Label" type="Label" parent="Title"]
+margin_left = 19.0
+margin_top = 36.0
+margin_right = 1227.0
+margin_bottom = 69.0
+rect_scale = Vector2( 1, 1.1 )
+custom_fonts/font = SubResource( 2 )
+text = "Overture from 'Orpheus in the Underworld' "
+align = 2
+
+[node name="Genre" type="Panel" parent="Title"]
+margin_left = 1026.35
+margin_top = 70.6268
+margin_right = 1213.35
+margin_bottom = 88.6268
+custom_styles/panel = SubResource( 3 )
+
+[node name="Label" type="Label" parent="Title/Genre"]
+margin_left = 5.0
+margin_right = 181.0
+margin_bottom = 18.0
+custom_fonts/font = SubResource( 4 )
+text = "Classical "
+align = 1
+valign = 1
+clip_text = true
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Drums" parent="." instance=ExtResource( 1 )]
 
