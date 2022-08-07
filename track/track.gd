@@ -159,7 +159,7 @@ func process_with_time(time, delta):
 	#print("x: ", position_x)
 	#print("curr x:", bars_node.position.x)
 		
-	if (bars_node.position.x - position_x) > speed*delta*2:
+	if abs(bars_node.position.x - position_x) > speed*delta*2.0:
 		print("FIX delay! ", bars_node.position.x - position_x)
 		bars_node.position.x = position_x	
 	

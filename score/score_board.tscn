@@ -152,7 +152,7 @@ position = Vector2( 90.4301, 73.8999 )
 scale = Vector2( 0.6, 0.6 )
 texture = ExtResource( 7 )
 region_enabled = true
-region_rect = Rect2( -6.40881, 357.417, 259.252, 158.668 )
+region_rect = Rect2( -47.8415, 176.503, 346.771, 179.44 )
 
 [node name="Label" type="Label" parent="Difficulty"]
 margin_left = 31.0535
@@ -161,7 +161,7 @@ margin_right = 131.053
 margin_bottom = 128.4
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 6 )
-text = "Hard"
+text = "Normal"
 align = 1
 valign = 1
 
